@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 
-from tryFastAPI.endpoints import all_routers
+from AkWorder.endpoints import all_routers
 
 
 def make_app() -> FastAPI:

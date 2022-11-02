@@ -6,12 +6,12 @@ from fastapi import (
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
 
-from tryFastAPI.db.connection.session import get_session_dependency as get_session
-from tryFastAPI.db.models import Html
-from tryFastAPI.crud.html import get_html, put_html, post_html, delete_html
+from AkWorder.db.connection.session import get_session_dependency as get_session
+from AkWorder.db.models import Html
+from AkWorder.crud.html import get_html, put_html, post_html, delete_html
 
-from tryFastAPI.schemas import Html as HtmlSchema
-from tryFastAPI.schemas import SimpleResponce
+from AkWorder.schemas import Html as HtmlSchema
+from AkWorder.schemas import SimpleResponce
 
 api_router = APIRouter(
     prefix="/http",

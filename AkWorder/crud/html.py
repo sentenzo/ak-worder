@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from tryFastAPI.db.models import Html
-from tryFastAPI.schemas import Html as HtmlSchema
+from AkWorder.db.models import Html
+from AkWorder.schemas import Html as HtmlSchema
 
 
 async def get_html(session: AsyncSession, key: str) -> HtmlSchema | None:

@@ -12,8 +12,10 @@ RUN apt update && \
 
 RUN python -m pip install --upgrade pip
 
+ARG PROJ_NAME
+
 ENV app app
-ENV pkg tryFastAPI
+ENV pkg $PROJ_NAME
 RUN mkdir -p /$app/$pkg
 WORKDIR /$app
 ADD . /$app/$pkg

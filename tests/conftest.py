@@ -10,9 +10,9 @@ from alembic.config import Config as AlembicConfig
 from fastapi.testclient import TestClient
 
 
-from tryFastAPI.db.connection.session import DbUriBuilderLocal
-from tryFastAPI import make_app
-from tryFastAPI.db.connection.session import get_session_dependency
+from AkWorder.db.connection.session import DbUriBuilderLocal
+from AkWorder import make_app
+from AkWorder.db.connection.session import get_session_dependency
 
 
 dotenv.load_dotenv()

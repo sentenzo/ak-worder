@@ -4,6 +4,12 @@ services:
   app:
     container_name: ${DOCKER_APP_NAME}
     image: ${PROJ_LOWER_NAME}/${WEB_APP_LOWER_NAME}
+
+    build:
+      context: ./${PROJ_NAME}
+      args:
+        - PROJ_NAME=${PROJ_NAME}
+
     env_file: ./.env
     environment:
       DB_HOST: ${DOCKER_DB_NAME}

@@ -9,7 +9,7 @@ from alembic import context
 # access to the values within the .ini file in use.
 config = context.config
 
-from tryFastAPI.db.connection.session import DbUriBuilderLocal
+from AkWorder.db.connection.session import DbUriBuilderLocal
 
 builder = DbUriBuilderLocal()
 builder.from_env()
@@ -27,7 +27,7 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from tryFastAPI.db import DeclarativeBase
+from AkWorder.db import DeclarativeBase
 
 target_metadata = DeclarativeBase.metadata
 
