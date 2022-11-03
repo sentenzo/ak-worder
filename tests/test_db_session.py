@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, text
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
 async def test_select_1(acync_session: AsyncSession):

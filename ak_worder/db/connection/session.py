@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+from sqlalchemy.engine import Engine
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.engine import Engine
 
 from ..utils.db_url_builder import DbUrlEnvBuilder, DbUrlParams
+
 
 ENV_MAPPING = {
     DbUrlParams.PROTOCOL: "DB_PROTOCOL",
@@ -36,9 +37,7 @@ class SessionManager:
 
     @property
     def SessionLocal(self):
-        return sessionmaker(
-            bind=self.engine, class_=AsyncSession, expire_on_commit=False
-        )
+        return sessionmaker(bind=self.engine, class_=AsyncSession, expire_on_commit=False)
 
 
 async def get_session_dependency() -> AsyncSession:
@@ -47,4 +46,4 @@ async def get_session_dependency() -> AsyncSession:
         yield session
 
 
-__all__ = [DbUriBuilderLocal, get_session_dependency]
+__all__ = ["DbUriBuilderLocal", "get_session_dependency"]

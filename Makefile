@@ -41,3 +41,8 @@ run:
 test:
 	docker-compose up -d db
 	poetry run pytest
+
+linting:
+	poetry run isort $(PROJ_NAME) tests
+	poetry run black $(PROJ_NAME) tests
+	poetry run pylint $(PROJ_NAME)

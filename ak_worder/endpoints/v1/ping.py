@@ -1,13 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException
-from starlette import status
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
+from starlette import status
 
-from AkWorder.schemas import SimpleResponce
-from AkWorder.db.connection.session import get_session_dependency as get_session
+from ak_worder.db.connection.session import get_session_dependency as get_session
+from ak_worder.schemas import SimpleResponce
+
 
 api_router = APIRouter(
-    prefix="/ping",
+    prefix="/v1/ping",
     tags=["Application Health"],
 )
 

@@ -25,10 +25,12 @@ Application examples:
 """
 
 from __future__ import annotations
-from enum import Enum
-import os
-from typing import Any, Callable
+
 import logging
+import os
+from enum import Enum
+from typing import Any, Callable
+
 
 logger = logging.getLogger(__name__)
 

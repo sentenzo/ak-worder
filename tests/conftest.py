@@ -1,18 +1,17 @@
 import os
 from uuid import uuid4
 
-import pytest
 import dotenv
-from sqlalchemy_utils import create_database, database_exists, drop_database
-from sqlalchemy.ext.asyncio import AsyncSession
-from alembic.command import upgrade as alembic_upgrade, downgrade as alembic_downgrade
-from alembic.config import Config as AlembicConfig
+import pytest
 from fastapi.testclient import TestClient
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy_utils import create_database, database_exists, drop_database
 
-
-from AkWorder.db.connection.session import DbUriBuilderLocal
-from AkWorder import make_app
-from AkWorder.db.connection.session import get_session_dependency
+from ak_worder import make_app
+from ak_worder.db.connection.session import DbUriBuilderLocal, get_session_dependency
+from alembic.command import downgrade as alembic_downgrade
+from alembic.command import upgrade as alembic_upgrade
+from alembic.config import Config as AlembicConfig
 
 
 dotenv.load_dotenv()
