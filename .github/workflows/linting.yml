@@ -1,0 +1,29 @@
+name: Linting
+
+on: 
+  push:
+    branches:
+    - main
+    paths:
+      - '**.py'
+  pull_request:
+    branches:
+    - main
+    paths:
+      - '**.py'
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' 
+    - name: Poetry
+      run: |
+        pip install poetry
+        poetry install
+    - run: poetry run isort ak_worder tests
+    - run: poetry run black ak_worder tests
+    - run: poetry run pylint ak_worder
